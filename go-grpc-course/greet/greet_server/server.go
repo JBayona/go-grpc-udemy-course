@@ -26,6 +26,17 @@ func (*server) Greet(ctx context.Context, req *greetpb.GreetRequest) (*greetpb.G
 	return res, nil
 }
 
+func (*server) AdditionOperation(ctx context.Context, req *greetpb.SumRequest) (*greetpb.SumResponse, error) {
+	fmt.Printf("Additional Operation was invoked with %v", req)
+	firstNumber := req.GetFirstNumber()
+	secondNumber := req.GetSecondNumber()
+	result := firstNumber + secondNumber
+	res := &greetpb.SumResponse{
+		Result: result,
+	}
+	return res, nil
+}
+
 func main() {
 	fmt.Println("Hello World")
 
