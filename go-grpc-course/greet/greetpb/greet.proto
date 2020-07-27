@@ -25,8 +25,19 @@ message SumResponse {
   int32 result = 1;
 }
 
+message GreetManyTimesRequest {
+  Greeting greeting = 1;
+}
+
+message GreetManyTimesResponse {
+  string result = 1;
+}
+
 service GreetService{
   // Unary API
   rpc Greet(GreetRequest) returns (GreetResponse) {};
   rpc AdditionOperation (SumRequest) returns (SumResponse) {};
+
+  // Server Streaming
+  rpc GreetManyTimes (GreetManyTimesRequest) returns (stream GreetManyTimesResponse) {};
 }
