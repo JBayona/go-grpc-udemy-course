@@ -27,9 +27,9 @@ func (*server) Sum(ctx context.Context, req *calculatorpb.SumRequest) (*calculat
 }
 
 func (*server) PrimeNumberDecomposition(req *calculatorpb.PrimerNumberDescompositionRequest, stream calculatorpb.CalculatorService_PrimeNumberDecompositionServer) error {
-	fmt.Printf("Primer Number Decomposition was called with: %v", req)
+	fmt.Printf("Primer Number Decomposition was called with: %v\n", req)
 	N := req.GetNumber()
-	k := 1
+	k := 2
 	for N > 1 {
 		if N%int32(k) == 0 {
 			res := &calculatorpb.PrimerNumberDescompositionResponse{
@@ -37,7 +37,7 @@ func (*server) PrimeNumberDecomposition(req *calculatorpb.PrimerNumberDescomposi
 			}
 			stream.Send(res)
 			time.Sleep(1000 * time.Millisecond)
-			N = N % int32(k)
+			N = N / int32(k)
 		} else {
 			k = k + 1
 		}
