@@ -21,11 +21,11 @@ message PrimerNumberDescompositionResponse {
 }
 
 message ComputerAverageRequest {
-  float number = 1;
+  int32 number = 1;
 }
 
 message ComputerAverageResponse {
-  float result = 1;
+  double result = 1;
 }
 
 service CalculatorService {
