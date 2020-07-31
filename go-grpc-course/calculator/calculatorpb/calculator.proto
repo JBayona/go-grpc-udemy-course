@@ -20,12 +20,20 @@ message PrimerNumberDescompositionResponse {
   int32 result = 1;
 }
 
+message ComputerAverageRequest {
+  int64 number = 1;
+}
 
+message ComputerAverageResponse {
+  int64 result = 1;
+}
 
 service CalculatorService {
   // Unary Server
   rpc Sum (SumRequest) returns (SumResponse) {};
   // Server Streaming
   rpc PrimeNumberDecomposition (PrimerNumberDescompositionRequest) returns (stream PrimerNumberDescompositionResponse) {};
+  // Client Streaming
+  rpc ComputeAverage (ComputerAverageRequest) returns (stream ComputerAverageResponse) {};
 }
 
