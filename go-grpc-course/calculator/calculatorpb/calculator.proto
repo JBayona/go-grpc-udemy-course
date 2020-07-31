@@ -34,6 +34,6 @@ service CalculatorService {
   // Server Streaming
   rpc PrimeNumberDecomposition (PrimerNumberDescompositionRequest) returns (stream PrimerNumberDescompositionResponse) {};
   // Client Streaming
-  rpc ComputeAverage (ComputerAverageRequest) returns (stream ComputerAverageResponse) {};
+  rpc ComputeAverage (stream ComputerAverageRequest) returns (ComputerAverageResponse) {};
 }
 
