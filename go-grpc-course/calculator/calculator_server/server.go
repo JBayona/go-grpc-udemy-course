@@ -48,14 +48,14 @@ func (*server) PrimeNumberDecomposition(req *calculatorpb.PrimerNumberDescomposi
 
 func (*server) ComputeAverage(stream calculatorpb.CalculatorService_ComputeAverageServer) error {
 	fmt.Printf("ComputeAverage function was invoked with a streaming request\n")
-	result := int64(0)
-	count := int64(0)
+	result := float32(0)
+	count := float32(0)
 	for {
 		req, err := stream.Recv()
 		if err == io.EOF {
 			return stream.SendAndClose(
 				&calculatorpb.ComputerAverageResponse{
-					Result: result / count,
+					Result: float32(result / count),
 				},
 			)
 		}
