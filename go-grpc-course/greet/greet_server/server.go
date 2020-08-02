@@ -62,7 +62,7 @@ func (*server) LongGreet(stream greetpb.GreetService_LongGreetServer) error {
 	}
 }
 
-func (*server) GreetEveyone(stream greetpb.GreetService_GreetEveryoneServer) error {
+func (*server) GreetEveryone(stream greetpb.GreetService_GreetEveryoneServer) error {
 	fmt.Printf("GreetEveryone function was invoked with a streaming request\n")
 
 	for {
