@@ -82,7 +82,7 @@ func (*server) GreetEveryone(stream greetpb.GreetService_GreetEveryoneServer) er
 			},
 		)
 		if sendErr != nil {
-			log.Fatalf("Errhor while streaming to client: %v", err)
+			log.Fatalf("Error while streaming to client: %v", sendErr)
 			return err
 		}
 	}
