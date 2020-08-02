@@ -84,7 +84,7 @@ func (*server) FindMaximum(stream calculatorpb.CalculatorService_FindMaximumServ
 			max = number
 			sendErr := stream.Send(
 				&calculatorpb.FindMaximumResponse{
-					Reult: max,
+					Result: max,
 				},
 			)
 			if sendErr != nil {

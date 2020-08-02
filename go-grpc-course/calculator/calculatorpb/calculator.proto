@@ -33,7 +33,7 @@ message FindMaximumRequest {
 }
 
 message FindMaximumResponse {
-  int32 reult = 1;
+  int32 result = 1;
 }
 
 service CalculatorService {
