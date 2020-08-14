@@ -21,7 +21,7 @@ type server struct{}
 
 // Attached method to the struct
 func (*server) Sum(ctx context.Context, req *calculatorpb.SumRequest) (*calculatorpb.SumResponse, error) {
-	fmt.Printf("Receive SUM RPC: %v", req)
+	fmt.Printf("Receive SUM RPC: %v\n", req)
 	firstNumber := req.FirstNumber
 	secondNumber := req.SecondNumber
 	sum := firstNumber + secondNumber
